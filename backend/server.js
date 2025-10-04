@@ -13,7 +13,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 4000;
+// const PORT = 4000;
+const port = process.env.PORT || 4000 
 
 // Middleware to handle CORS
 app.use(cors());
@@ -44,6 +45,6 @@ app.get('/', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`🚀 Server running on http://localhost:${port}`);
 });
