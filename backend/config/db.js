@@ -59,23 +59,19 @@ import mongoose from "mongoose";
 //      import dotenv from 'dotenv';
 //      dotenv.config();
 //
-     const { MONGO_USER, MONGO_PASS, MONGO_CLUSTER, MONGO_DB } = process.env;
-     const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_CLUSTER}/${MONGO_DB}?retryWrites=true&w=majority`;
+const { MONGO_USER, MONGO_PASS, MONGO_CLUSTER, MONGO_DB } = process.env;
+const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_CLUSTER}/${MONGO_DB}?retryWrites=true&w=majority`;
 
-console.log("idhar dekh be", uri);
-//
-//mongodb+srv://himanshuhota55_db_user:resume321@cluster0.sombj6w.mongodb.net/
-//mongodb+srv://himanshuhota55_db_user:resume32@cluster0.sombj6w.mongodb.net/Resume?retryWrites=true&w=majority
-//  
+
 export const connectDB = async () => {
-       try {
-         await mongoose.connect(uri);
-         console.log('DB CONNECTED');
-       } catch (err) {
-         console.error('DB CONNECTION ERROR:', err);
-       }
-     };
-     
+  try {
+    await mongoose.connect(uri);
+    console.log('DB CONNECTED');
+  } catch (err) {
+    console.error('DB CONNECTION ERROR:', err);
+  }
+};
+
 
 
 // IF HAVE ANY QUERIES CALL ON +91 8299431275  OR EMAIL ON: hexagonsservices@gmail.com
